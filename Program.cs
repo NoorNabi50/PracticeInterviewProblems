@@ -134,9 +134,9 @@ namespace PracticeInterviewProblems
             mystack.Push(1);
             mystack.Push(2);
             mystack.Push(3);
-            mystack.Push(4);
             Console.WriteLine("Size of Stack : {0} : ", mystack.Size);
-
+            mystack.PushAtend(4);
+            mystack.PushAtEndRecrusive(5);
             while (!mystack.Isempty())
             {
                 Console.WriteLine(mystack.Peek());

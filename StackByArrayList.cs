@@ -26,6 +26,7 @@ namespace PracticeInterviewProblems
         public int Peek() => Isempty() ? -1 : Convert.ToInt32(arrayList[Size - 1]);
   
 
+        //using loop 
         public void PushAtend(int elem = 0)
         {        
              ArrayList tempArrayList = new(); 
@@ -39,11 +40,27 @@ namespace PracticeInterviewProblems
             Push(elem);
             while(tempArrayList.Count !=0)
             {
-                Push((int)tempArrayList[tempArrayList.Count - 1]);
+                int top = (int)tempArrayList[tempArrayList.Count - 1];
+                Push(top);
+                tempArrayList.Remove(top);
             }
 
         }
 
+        //using recrusion Efficient/Optimized way
+
+        public void PushAtEndRecrusive(int elem = 0)
+          {
+            if(Isempty())
+            {
+                Push(elem);
+                return;
+            }
+            int top = Pop();
+            PushAtEndRecrusive(elem);
+            Push(top);
+
+         }
 
     }
 }

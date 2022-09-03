@@ -10,8 +10,8 @@ namespace PracticeInterviewProblems
     {
            public  int sum = 1;
         #region Methods
-        //Find most repeated character of string
-         void MaxCharacterInString(string param)
+        //find the maximum occurring character in given string
+        void MaxCharacterInString(string param)
         {
             Dictionary<char, int> charVals = new Dictionary<char, int>();
             foreach (char c in param)
@@ -32,7 +32,7 @@ namespace PracticeInterviewProblems
 
         }
 
-        //find the max value in the array --for loop approach
+        //find the max element of the array --for loop approach
 
          void FindMax(int[] marks)
         {
@@ -48,8 +48,8 @@ namespace PracticeInterviewProblems
 
             Console.WriteLine(max);
         }
-        //find the min value in the array --for loop approach
-         void FindMin(int[] marks)
+        //find the min element of the array --for loop approach
+        void FindMin(int[] marks)
         {
             int min = marks[0];
 
@@ -64,7 +64,7 @@ namespace PracticeInterviewProblems
             Console.WriteLine(min);
         }
 
-        //Delete an Element of array in the specified position
+        //Delete an Element of array at the specified position
 
         // void RemoveElem(int[] array, int position=3)
         //{
@@ -120,7 +120,7 @@ namespace PracticeInterviewProblems
             PrintEvenNumbersReverse(n - 1);
         }
 
-
+        //Print number of Vowels and Consonants in the string
          void CalculateVowelsConsonants(string text)
         {
             int Consonants = 0, Vowels = 0;
@@ -160,6 +160,7 @@ namespace PracticeInterviewProblems
 
         }
 
+        //Print fabonaci series -- loop approach
          void PrintFabonaciSeries(int numberofElements)
         {
             int firstNumber = 0;
@@ -176,7 +177,18 @@ namespace PracticeInterviewProblems
             }
         }
 
-         void OccurenceOfCharacter(string text, char character)
+        //Print fabonaci series -- recursive approach
+        void PrintFabonaciSeriesRecursive(int n, int a, int b)
+        {
+            if (n == 0)
+                return;
+            int sum = a + b;
+            Console.Write(sum + " ");
+            PrintFabonaciSeriesRecursive(n - 1, b, sum);
+        }
+
+        //Print Occurence of character in the string
+        void OccurenceOfCharacter(string text, char character)
         {
             int numberofOccurences = 0;
             for (int i = 0; i < text.Length; i++)
@@ -189,6 +201,7 @@ namespace PracticeInterviewProblems
             Console.Write(numberofOccurences);
         }
 
+        //Reverse the given array
          void ReverseArray(int[] array)
         {
             int start = 0;
@@ -226,7 +239,7 @@ namespace PracticeInterviewProblems
 
         }
 
-
+        //Print factorial of a given number - For Loop approach
          void PrintFactorial(int number)
         {
             ////using for loop
@@ -238,7 +251,7 @@ namespace PracticeInterviewProblems
             //Console.WriteLine("Factorial of {0} = {1}", number, sum);
 
 
-            // using recrusion
+            // using Recursive
 
             if (number == 0)
             {
@@ -249,7 +262,7 @@ namespace PracticeInterviewProblems
             PrintFactorial(number - 1);
         }
 
-
+        //Print sum of digits - For Loop approach
          void SumOfDigits(int number = 123)
         {
             int sum = 0;
@@ -263,7 +276,10 @@ namespace PracticeInterviewProblems
 
         }
 
-         void SumofDigit(int number)
+        //Print sum of digits - Recursive approach
+
+
+        void SumofDigit(int number)
         {
             if (number == 0)
             {
@@ -275,7 +291,7 @@ namespace PracticeInterviewProblems
         }
 
 
-
+        //Working of Try catch
          void TryCatchWork()
         {
             try
@@ -294,9 +310,9 @@ namespace PracticeInterviewProblems
         }
 
 
-        //             using for loop
+        //  To check whether the given array is sorted increasingly      --    using for loop
 
-         bool IsIncreasingsortedArray(int[] array)
+        bool IsIncreasingsortedArray(int[] array)
         {
             for (int i = 0; i < array.Length - 1; i++)
             {
@@ -315,9 +331,8 @@ namespace PracticeInterviewProblems
 
         }
 
-        //using recrusion
-
-         bool isIncreasinglySorted(int[] array, int indx)
+        // To check whether the given array is sorted increasingly  -- using Recursive 
+        bool isIncreasinglySorted(int[] array, int indx)
         {
             if (indx == array.Length - 1)
                 return true;
@@ -330,9 +345,9 @@ namespace PracticeInterviewProblems
         }
 
 
-        //using for loop MoveXtoEnd
+        //Move character to the end of string -- for loop approach
 
-         void MovechartoEnd(string str, char target)
+        void MovechartoEnd(string str, char target)
         {
             int count = 0;
             string newstr = "";
@@ -354,7 +369,7 @@ namespace PracticeInterviewProblems
 
         }
 
-
+        // Remove duplicate characters in a string 
          void RemoveDuplicates(string str)
         {
             StringBuilder newstr = new StringBuilder();
@@ -415,7 +430,7 @@ namespace PracticeInterviewProblems
             }
         }
 
-
+        // Reverse the stringbuilder  
          void ReverseStringBuilder(StringBuilder str)
         {
             //H E L L O
@@ -435,6 +450,7 @@ namespace PracticeInterviewProblems
             Console.WriteLine(str.ToString());
         }
 
+        //Print the power of Number - recursive method
          void PowerOfN(int @base, int exponent, int result = 1)
         {
             //2^3 = 2 * 2 * 2
@@ -449,7 +465,7 @@ namespace PracticeInterviewProblems
         }
 
 
-
+        //Find most repeated character in a string - loop and dictionary approach
 
          void MaxCharacterInstring(string s = "abccc")
         {
@@ -480,7 +496,7 @@ namespace PracticeInterviewProblems
 
         }
 
-
+        // Print Count of negative elements present in an array
          void CountNegativeElements(int[] array)
         {
             int count = 0;
@@ -495,14 +511,6 @@ namespace PracticeInterviewProblems
         }
 
 
-      void PrintFabonaciSeriesRecrusion(int n, int a, int b)
-        {
-            if (n == 0)
-                return;
-            int sum = a + b;
-            Console.Write(sum + " ");
-            PrintFabonaciSeriesRecrusion(n - 1, b, sum);
-        }
         #endregion
     }
 }

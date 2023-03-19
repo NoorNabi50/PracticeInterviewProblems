@@ -1,4 +1,6 @@
-﻿using PracticeInterviewProblems.LinkedList;
+﻿using PracticeInterviewProblems.BasicProblems;
+using PracticeInterviewProblems.LinkedList;
+using PracticeInterviewProblems.Stack;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -134,24 +136,44 @@ namespace PracticeInterviewProblems
             mystack.Push(1);
             mystack.Push(2);
             mystack.Push(3);
-            Console.WriteLine("Size of Stack : {0} : ", mystack.Size);
+         //   Console.WriteLine("Size of Stack : {0} : ", mystack.Size);
             mystack.PushAtend(4);
             mystack.PushAtEndRecrusive(5);
             while (!mystack.Isempty())
             {
-                Console.WriteLine(mystack.Peek());
+              //  Console.WriteLine(mystack.Peek());
                 mystack.Pop();
             }
 
-            Console.WriteLine("Size of Stack : {0} : ", mystack.Size);
+           // Console.WriteLine("Size of Stack : {0} : ", mystack.Size);
 
 
             #endregion
 
+         Problems problems = new Problems();
+            //    problems.FindIntersection(new int[] { 1,8,29,2,19,28 }, new int[] { 6, 99, 82, 2,33,233 });
+
+            //problems.FirstNonRepeatingChar("NoorNabi");
+
+            /*  Search search = new Search();
+              search.FindFirstandLastOccuranceUsingLinearSearch(new int[] { 2, 3, 5, 7, 7, 7, 9 },7);*/
+            List<string> nameslist = new List<string>()
+            {
+                "Noor Nabi",
+                "Awais",
+                "Sarang"
+            };
+            problems.AlterCollectionByReference(nameslist);
+
+            foreach(var name in nameslist)
+            {
+                Console.WriteLine(name);
+            }
+
         }
 
 
-
+        
     }
 
 

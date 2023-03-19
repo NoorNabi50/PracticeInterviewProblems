@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeInterviewProblems
+namespace PracticeInterviewProblems.Array
 {
     internal static class ArrayClass
     {
@@ -12,7 +12,7 @@ namespace PracticeInterviewProblems
         public static int[] Data { get; set; }
 
 
-        public static  void Insert(int item,int index)
+        public static void Insert(int item, int index)
         {
             if (index > Data.Length - 1)
             {
@@ -28,12 +28,12 @@ namespace PracticeInterviewProblems
 
         public static void Search(int item)
         {
-            for(int i = 0; i < Data.Length; i++)
+            for (int i = 0; i < Data.Length; i++)
             {
                 if (Data[i] == item)
                 {
-                  Console.WriteLine("Element found");
-                  return;
+                    Console.WriteLine("Element found");
+                    return;
                 }
             }
 
@@ -47,11 +47,11 @@ namespace PracticeInterviewProblems
 
         public static void Delete(int item)
         {
-            for(int i = 0; i < Data.Length; i++)
+            for (int i = 0; i < Data.Length; i++)
             {
                 if (Data[i] == item)
                 {
-                    for(int j = i; j < Data.Length-1; j++)
+                    for (int j = i; j < Data.Length - 1; j++)
                     {
                         Data[j] = Data[j + 1];
                     }

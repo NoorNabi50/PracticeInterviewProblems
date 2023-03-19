@@ -1,14 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeInterviewProblems
+namespace PracticeInterviewProblems.BasicProblems
 {
     internal class Problems
     {
-           public  int sum = 1;
+        public int sum = 1;
         #region Methods
         //find the maximum occurring character in given string
         void MaxCharacterInString(string param)
@@ -34,7 +35,7 @@ namespace PracticeInterviewProblems
 
         //find the max element of the array --for loop approach
 
-         void FindMax(int[] marks)
+        void FindMax(int[] marks)
         {
             int max = marks[0];
 
@@ -88,7 +89,7 @@ namespace PracticeInterviewProblems
         //}
 
 
-         bool IsPalindrome(string name)
+        bool IsPalindrome(string name)
         {
             string Reversedstring = "";
             for (int i = name.Length - 1; i >= 0; i--)
@@ -99,7 +100,7 @@ namespace PracticeInterviewProblems
         }
 
 
-         void InsertString(string T, int R, string P)
+        void InsertString(string T, int R, string P)
         {
             string temp1 = T.Substring(0, R - 1);
 
@@ -109,7 +110,7 @@ namespace PracticeInterviewProblems
             Console.WriteLine(temp1);
         }
 
-         void PrintEvenNumbersReverse(int n = 1000)
+        void PrintEvenNumbersReverse(int n = 1000)
         {
             if (n < 0)
                 return;
@@ -121,7 +122,7 @@ namespace PracticeInterviewProblems
         }
 
         //Print number of Vowels and Consonants in the string
-         void CalculateVowelsConsonants(string text)
+        void CalculateVowelsConsonants(string text)
         {
             int Consonants = 0, Vowels = 0;
             char temp;
@@ -139,7 +140,7 @@ namespace PracticeInterviewProblems
         }
 
         //without using builtin functions
-         bool IsAnagram(string text1, string text2)
+        bool IsAnagram(string text1, string text2)
         {
             if (text1.Length != text2.Length)
                 return false;
@@ -161,7 +162,7 @@ namespace PracticeInterviewProblems
         }
 
         //Print fabonaci series -- loop approach
-         void PrintFabonaciSeries(int numberofElements)
+        void PrintFabonaciSeries(int numberofElements)
         {
             int firstNumber = 0;
             int secondNumber = 1;
@@ -202,7 +203,7 @@ namespace PracticeInterviewProblems
         }
 
         //Reverse the given array
-         void ReverseArray(int[] array)
+        void ReverseArray(int[] array)
         {
             int start = 0;
             int end = array.Length - 1;
@@ -232,7 +233,7 @@ namespace PracticeInterviewProblems
         }
 
 
-         void PassByReferenceParameters(int num1, int num2)
+        void PassByReferenceParameters(int num1, int num2)
         {
             num1 = num1 + 5;
             num2 = num2 + 5;
@@ -240,7 +241,7 @@ namespace PracticeInterviewProblems
         }
 
         //Print factorial of a given number - For Loop approach
-         void PrintFactorial(int number)
+        void PrintFactorial(int number)
         {
             ////using for loop
             // int sum = 1;
@@ -263,7 +264,7 @@ namespace PracticeInterviewProblems
         }
 
         //Print sum of digits - For Loop approach
-         void SumOfDigits(int number = 123)
+        void SumOfDigits(int number = 123)
         {
             int sum = 0;
             while (number > 0)
@@ -292,7 +293,7 @@ namespace PracticeInterviewProblems
 
 
         //Working of Try catch
-         void TryCatchWork()
+        void TryCatchWork()
         {
             try
             {
@@ -370,7 +371,7 @@ namespace PracticeInterviewProblems
         }
 
         // Remove duplicate characters in a string 
-         void RemoveDuplicates(string str)
+        void RemoveDuplicates(string str)
         {
             StringBuilder newstr = new StringBuilder();
             //using the map of bool array  type
@@ -411,7 +412,7 @@ namespace PracticeInterviewProblems
         }
 
 
-         void DecimalToBinary(int number)
+        void DecimalToBinary(int number)
         {
             //store result in array
             int[] result = new int[15];
@@ -431,7 +432,7 @@ namespace PracticeInterviewProblems
         }
 
         // Reverse the stringbuilder  
-         void ReverseStringBuilder(StringBuilder str)
+        void ReverseStringBuilder(StringBuilder str)
         {
             //H E L L O
 
@@ -451,7 +452,7 @@ namespace PracticeInterviewProblems
         }
 
         //Print the power of Number - recursive method
-         void PowerOfN(int @base, int exponent, int result = 1)
+        void PowerOfN(int @base, int exponent, int result = 1)
         {
             //2^3 = 2 * 2 * 2
 
@@ -467,7 +468,7 @@ namespace PracticeInterviewProblems
 
         //Find most repeated character in a string - loop and dictionary approach
 
-         void MaxCharacterInstring(string s = "abccc")
+        void MaxCharacterInstring(string s = "abccc")
         {
             Dictionary<char, int> map = new Dictionary<char, int>();
 
@@ -497,7 +498,7 @@ namespace PracticeInterviewProblems
         }
 
         // Print Count of negative elements present in an array
-         void CountNegativeElements(int[] array)
+        void CountNegativeElements(int[] array)
         {
             int count = 0;
             for (int i = 0; i < array.Length; i++)
@@ -512,5 +513,115 @@ namespace PracticeInterviewProblems
 
 
         #endregion
+
+        ///<summary>
+        /// Method to find the intersection of two arrays
+        /// <param>arra1, arrr2</param>
+        /// </summary>
+        /// 
+
+        public void FindIntersection(int[] arr1, int[] arr2)
+        {
+            ArrayList result = new ArrayList();
+            int i = 0, j = 0;
+
+            //need to sort both arrays before finding intersection
+
+            ArrayList sortedArrays = sortArrays(new ArrayList() { arr1, arr2 });
+            arr1 = (int[])sortedArrays[0];
+            arr2 = (int[])sortedArrays[1];
+
+            //Now finding intersection of two arrays
+
+            for (; i < arr1.Length && j < arr2.Length;)
+            {
+                if (arr1[i] == arr2[j])
+                {
+                    result.Add(arr1[i]);
+                    i++;
+                    j++;
+                }
+                else if (arr1[i] < arr2[j])
+                    i++;
+                else
+                    j++;
+            }
+            foreach (var item in result)
+                Console.WriteLine(item.ToString());
+        }
+
+        private ArrayList sortArrays(ArrayList arrays)
+        {
+            ArrayList result = new();
+            foreach (int[] array in arrays)
+            {
+                for (int i = 0; i < array.Length - 1; i++)
+                {
+                    for (int j = i + 1; j < array.Length; j++)
+                    {
+                        if (array[i] > array[j])
+                        {
+                            array[i] = array[i] + array[j];
+                            array[j] = array[i] - array[j];
+                            array[i] = array[i] - array[j];
+                        }
+                    }
+                }
+                result.Add(array);
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Method to find the first non-repeating character in a string
+        /// </summary>
+        /// 
+        public void FirstNonRepeatingChar(string s)
+        {
+            Dictionary<char, int> dict = new();
+            foreach (char c in s)
+            {
+                if (!dict.ContainsKey(c))
+                {
+                    dict.Add(c, 1);
+                }
+                else
+                    dict[c]++;
+            }
+
+            foreach (var item in dict)
+            {
+                if (item.Value == 1)
+                {
+                    Console.WriteLine($"The first non repeating Char  = ${item.ToString()}");
+                    break;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Write a program that prints the numbers from 1 to 100. For multiples of three, print "Fizz" instead of the number.
+        /// For multiples of five, print "Buzz". For numbers 
+        /// which are multiples of both three and five, print "FizzBuzz".
+        /// </summary>
+      /* public void FizzBuzz(int startPoint, int endingPoint)
+        {
+            for(int i = startPoint; i <= endingPoint; i++)
+            {
+
+
+                else
+                    Console.WriteLine($"Printing Number itself {i}");
+            }
+        }*/
+
+
+        public void AlterCollectionByReference(List<string> names)
+        {
+            names.RemoveAt(0);
+            names.Insert(0, "Modified Name");
+        }
+
     }
 }

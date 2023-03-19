@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeInterviewProblems
+namespace PracticeInterviewProblems.Stack
 {
     internal class StackByArray
     {
@@ -21,16 +21,16 @@ namespace PracticeInterviewProblems
         }
 
         public bool CheckOverFlow() => Top >= MaxSize;
-        
+
 
         public void Push(int number)
         {
-            if(CheckOverFlow())
+            if (CheckOverFlow())
             {
                 Console.WriteLine("Stack is Full");
                 return;
             }
-            
+
             Top++;
             StackData[Top] = number;
 
@@ -38,12 +38,12 @@ namespace PracticeInterviewProblems
 
         public int Pop()
         {
-            if(Top < 0)
+            if (Top < 0)
             {
                 Console.WriteLine("Stack is Underflow");
             }
             Top--;
-           return StackData[Top];
+            return StackData[Top];
         }
 
         public int TopElement()

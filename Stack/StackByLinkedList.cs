@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeInterviewProblems
+namespace PracticeInterviewProblems.Stack
 {
     internal class StackByLinkedList
     {
@@ -15,7 +15,7 @@ namespace PracticeInterviewProblems
 
     public static class Node
     {
-        
+
 
     }
 

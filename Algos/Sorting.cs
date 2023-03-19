@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracticeInterviewProblems
+namespace PracticeInterviewProblems.Algos
 {
     internal class Sorting
     {
@@ -13,20 +13,20 @@ namespace PracticeInterviewProblems
         //Time complexity = O(n ^ 2)
         public void BubbleSort()
         {
-            for(int i = 0; i < Data.Length-1; i++)
+            for (int i = 0; i < Data.Length - 1; i++)
             {
-                for(int j = 0; j < Data.Length-i-1; j++ )
+                for (int j = 0; j < Data.Length - i - 1; j++)
                 {
-                    if (Data[j] > Data[j+1]) // check if number is greater than its next number
+                    if (Data[j] > Data[j + 1]) // check if number is greater than its next number
                     {
                         //swap elements
-                        Data[j] = Data[j] + Data[j + 1]; 
-                        Data[j + 1] = Data[j] - Data[j + 1]; 
+                        Data[j] = Data[j] + Data[j + 1];
+                        Data[j + 1] = Data[j] - Data[j + 1];
                         Data[j] = Data[j] - Data[j + 1];
                     }
                 }
             }
-            PrintArray(); 
+            PrintArray();
         }
 
         public void SelectionSort()
@@ -35,7 +35,7 @@ namespace PracticeInterviewProblems
             for (int i = 0; i < Data.Length - 1; i++)
             {
                 int smallest = i;
-                for (int j = i+1; j < Data.Length; j++)
+                for (int j = i + 1; j < Data.Length; j++)
                 {
                     if (Data[smallest] > Data[j + 1]) // check if number is greater than its next number
                         smallest = j; ;
@@ -58,12 +58,12 @@ namespace PracticeInterviewProblems
 
         public void PrintArray()
         {
-            foreach(var item in Data)
+            foreach (var item in Data)
             {
                 Console.WriteLine(item);
             }
         }
 
-      
+
     }
 }

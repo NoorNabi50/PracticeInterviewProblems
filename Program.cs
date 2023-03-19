@@ -1,4 +1,5 @@
 ﻿using PracticeInterviewProblems.BasicProblems;
+using PracticeInterviewProblems.Hashing;
 using PracticeInterviewProblems.LinkedList;
 using PracticeInterviewProblems.Stack;
 using System;
@@ -145,35 +146,46 @@ namespace PracticeInterviewProblems
                 mystack.Pop();
             }
 
-           // Console.WriteLine("Size of Stack : {0} : ", mystack.Size);
+            // Console.WriteLine("Size of Stack : {0} : ", mystack.Size);
 
 
             #endregion
 
-         Problems problems = new Problems();
-            //    problems.FindIntersection(new int[] { 1,8,29,2,19,28 }, new int[] { 6, 99, 82, 2,33,233 });
+            #region Problems
+            /* Problems problems = new Problems();
+             //    problems.FindIntersection(new int[] { 1,8,29,2,19,28 }, new int[] { 6, 99, 82, 2,33,233 });
 
-            //problems.FirstNonRepeatingChar("NoorNabi");
+             //problems.FirstNonRepeatingChar("NoorNabi");
 
-            /*  Search search = new Search();
-              search.FindFirstandLastOccuranceUsingLinearSearch(new int[] { 2, 3, 5, 7, 7, 7, 9 },7);*/
-            List<string> nameslist = new List<string>()
-            {
-                "Noor Nabi",
-                "Awais",
-                "Sarang"
-            };
-            problems.AlterCollectionByReference(nameslist);
+             *//*  Search search = new Search();
+               search.FindFirstandLastOccuranceUsingLinearSearch(new int[] { 2, 3, 5, 7, 7, 7, 9 },7);*//*
+             List<string> nameslist = new List<string>()
+             {
+                 "Noor Nabi",
+                 "Awais",
+                 "Sarang"
+             };
+             problems.AlterCollectionByReference(nameslist);
 
-            foreach(var name in nameslist)
-            {
-                Console.WriteLine(name);
-            }
+             foreach(var name in nameslist)
+             {
+                 Console.WriteLine(name);
+             }
+ */
 
+            #endregion
+
+            #region
+
+            //Hash.FindMajorityElement(new[] {1,3,2,5,1,3,1,5,1 });
+            //Hash.FindUnionOf2Arrays(new[] { 1, 2, 3,2882,92 }, new[] {92, 1, 6, 8, 9 });
+            //Hash.FindIntersectionOf2Arrays(new[] { 7, 3, 9 }, new[] {6,3,9,2,4,9});
+            Hash.FindItinerayFromTickets();
+            #endregion
         }
 
 
-        
+
     }
 
 
